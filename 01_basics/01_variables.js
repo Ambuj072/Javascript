@@ -16,3 +16,16 @@ console.table([email,pNumber,city,state])
 /*
 Do not prefer var because of issue block scope and function scope
 */
+
+//output
+/*
+ambujdubey071@gamil.com
+┌─────────┬───────────────────────────┐
+│ (index) │ Values                    │
+├─────────┼───────────────────────────┤
+│ 0       │ 'ambujdubey071@gamil.com' │
+│ 1       │ 9987654321                │
+│ 2       │ 'Allahabad'               │
+│ 3       │ undefined                 │
+└─────────┴───────────────────────────┘
+*/
