@@ -13,6 +13,8 @@ city="Allahabad"
 console.log(email);
 console.table([email,pNumber,city,state])
 
+
+//Notes
 /*
 Do not prefer var because of issue block scope and function scope
 */
