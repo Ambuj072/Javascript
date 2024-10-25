@@ -61,6 +61,40 @@ console.log(typeof converStr)//string
 33=>"33"
 */
 
+//************************ Operation *******************************
+
+let str1= "hello"
+let str2 =" Ambuj"
+let str3=str1+str2
+console.log(str3);
+
+console.log("1"+2);//12
+console.log(2+"1");//21
+console.log(1+2+"3")//33
+console.log("3"+1+"3");//313
+console.log(1+"3"+5+2);//1352
+console.log(2+3+"3"+5+2);//5352
+
+console.log(+true);//1
+console.log(-true);//-1
+console.log(+false);//0
+console.log(-false);//-0
+console.log(+"");//0
+console.log(+"Ambuj");//NaN
+console.log(-"");//-0
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
