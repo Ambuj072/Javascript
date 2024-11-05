@@ -39,6 +39,43 @@ console.log(Object.keys(regular_user));//[ 'email', 'fullName' ]
 console.log(Object.values(regular_user))//['abc@gmail.com',{ userFullName: { firstName: 'Ambuj', lastName: 'dubey' } }]
 console.log(Object.entries(regular_user));//[[ 'email', 'abc@gmail.com' ], [ 'fullName', { userFullName: [Object] } ]]
 
+const course={
+    course_Name:"javasript",
+    course_fee:999,
+    course_inst:"Hitesh"
+}
+
+
+//++++++++++++ Re-Stucturing Object ++++++++++++++
+
+console.log(course.course_Name);//javasript
+//Another way if I hava to do multiple time
+const{course_Name}=course
+console.log(course_Name);//javasript
+
+const{course_Name:Name}=course
+console.log(Name);//javasript
+
+//+++++++++++ API Intro ++++++++++
+
+//it will retrun JSON. like
+/*
+{
+    "name":"Ambuj",
+    "depart":"Cse"
+}
+
+it will return like this also
+[
+    {},
+    {},
+    {},
+]
+
+
+
+
+
 
 
 
