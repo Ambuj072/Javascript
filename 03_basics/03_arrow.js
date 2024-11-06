@@ -54,7 +54,7 @@ const five={
 five["welcomeMsg"]();//undefined
 
 
-//note=> we can use this in normal function but we can not use this in arrow function 
+//note=> we can use "this" in normal function but we can not use "this" in arrow function 
 
 const addTwo=(num1,num2)=>{
     return num1+num2
