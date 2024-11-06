@@ -20,9 +20,9 @@ function one(){
 }
 one()
 
+//+++++++++++++++++ interesting +++++++++++++++
 
-
-console.log(addone(2));//3
+console.log(addone(2));//3    this is hoisting in javascript
 function addone(num){
     return num+1;
 }
