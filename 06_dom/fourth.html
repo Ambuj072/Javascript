@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121;color:#fff">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+
+    
+</body>
+    <script>
+        //+++++++++ create element ++++++++++
+        //firstWay
+        function addSecond(langName){
+            const li=document.createElement('li')
+            li.innerHTML=langName
+            document.querySelector(".language").appendChild(li)
+        }
+        addSecond("python")
+
+        /*output
+        javascript
+        python
+        */
+        
+        //secondWay
+        function addOptiLanguage(langName){
+            const li=document.createElement("li")
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector(".language").appendChild(li)
+
+        }
+        addOptiLanguage("java")
+
+        /*output
+        javascript
+        python
+        java
+        */
+
+        //+++++++++++++++++++ Edit element ++++++++++++++++++
+        //edit
+        const secLang=document.querySelector("li:nth-child(2)")
+        const newLi=document.createElement("li")
+        newLi.textContent="golang"
+        secLang.replaceWith(newLi)
+
+        /*output
+        javascript
+        golang
+        java
+        */
+
+        //edit second way
+        const firstLang=document.querySelector("li:nth-child(1)")
+        firstLang.outerHTML="<li>c++</li>"
+
+        /*output
+        c++
+        golang
+        java
+        */
+
+        //+++++++++++++ remove +++++++++++++++++++
+        const lastLang=document.querySelector("li:last-child")
+        lastLang.remove()
+
+        /*output
+        c++
+        golang
+        */
+        
+
+    </script>
+</html>
