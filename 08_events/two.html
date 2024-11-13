@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h1>You are learning javascript</h1>
+    <button style="font-size: 50px; border-radius:10px; cursor:pointer;">click</button>
+    
+</body>
+<script>
+     function changeText(){
+        document.querySelector('h1').innerHTML="<h1>NO NO This is best javascript series</h1>"
+    }
+    const change=setTimeout(changeText,2000)
+    document.querySelector('button').addEventListener('click',function(e){
+        clearTimeout(change)
+    })
+</script>
+</html>

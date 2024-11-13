@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Hello ,Welcome to javascript</h1>
+    <button class="start" style="font-size: 30px; border-radius:10px; cursor:pointer;">start</button>
+    <button class="stop" style="font-size: 30px; border-radius:10px; cursor:pointer;">stop</button>
+    
+</body>
+    <script>
+        let intervalId;
+        const sayDate=function(str){
+            const date=new Date()
+            console.log(str,date.toLocaleTimeString())
+        }
+        function startTime(){
+            intervalId= setInterval(sayDate,1000,"Now time is :")
+           
+        }
+        document.querySelector('.start').addEventListener('click',(e)=>{
+                startTime()
+        })
+        document.querySelector('.stop').addEventListener('click',(e)=>{
+            clearInterval(intervalId)
+        })
+    </script>
+</html>
