@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styling the table */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styles */
+  .styled-table th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  /* Table row styling */
+  .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #191616;
+  }
+  
+  /* Zebra striping */
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #272525;
+  }
+  
+  /* Hover effect */
+  .styled-table tbody tr:hover {
+    background-color: #15a410;
+    cursor: pointer;
+  }
+  
+  /* Add a border to the table */
+  .styled-table {
+    border: 1px solid #15a410;
+    border-radius: 5px;
+  }
+  
+  /* Add some padding to the entire table */
+  .styled-table th, .styled-table td {
+    padding: 10px;
+  }
+  
+  /* Apply a subtle hover effect on table cells */
+  .styled-table td:hover {
+    background-color: #15a410;
+  }
+  
+    </style>
+</head>
+<body style="background-color: #212121;color: aliceblue;">
+
+<table class="styled-table">
+    <tr>
+      <th> Value</th>
+      <th>State</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>UNSENT</td>
+      <td>Client has been created. open() not called yet</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>OPENED</td>
+      <td>open() has been called.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>HEADERS_RECEIVED</td>
+      <td>send() has been called, and headers and status are available.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>LOADING</td>
+      <td>Downloading; responseText holds partial data.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>DONE</td>
+      <td>The operation is complete.</td>
+    </tr>
+
+    <div class="cart-container">
+        <div class="cart-item">
+            <div class="cart-item-photo">
+                <img src="https://via.placeholder.com/150" alt="Product Image">
+            </div>
+            <div class="cart-item-details">
+                <h3></h3>
+                <p></p>
+                <span class="follower">followers</span>
+                <span class="quantity"> </span>
+            </div>
+        </div>
+    </div>
+
+
+  </table>
+    
+</body>
+    <script>
+      const requestUrl="https://api.github.com/users/Ambuj072"
+     const xhr=new XMLHttpRequest()
+     xhr.open('GET',requestUrl)
+     xhr.onreadystatechange=function(){
+      console.log(xhr.readyState)
+      if(xhr.readyState===4){
+        const data=JSON.parse(this.responseText)
+        console.log(data)
+        console.log(data.login)
+        const name=document.querySelector('h3')
+        name.innerHTML=`GitHub_userName: ${data.login}`
+        const discription=document.querySelector('p')
+        discription.innerHTML=`${data.bio}`
+        const quantity=document.querySelector('.quantity')
+        quantity.innerHTML=`${data.followers}`
+        const img=document.querySelector('img')
+        img.src=`${data.avatar_url}`
+      }
+      
+     }
+     xhr.send()  
+    </script>
+</html>1
